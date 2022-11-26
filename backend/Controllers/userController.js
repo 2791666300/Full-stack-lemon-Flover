@@ -116,7 +116,6 @@ exports.getAllUsers = catchAsync(async (req, res) => {
 exports.getUser = catchAsync(async (req, res, next) => {
     const user = await User.findById(req.params.id)
     if (!user) {
-
         return next(new AppError('找不到该ID的文档数据 ', 404))
     }
     res.status(200).json({
@@ -142,7 +141,6 @@ exports.updateUser = catchAsync(async (req, res, next) => {
     })
 
     if (!newuser) {
-
         return next(new AppError('找不到该ID的文档数据 ', 404))
     }
 
